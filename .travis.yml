@@ -10,7 +10,6 @@ cache:
   directories:
     - $HOME/.composer/cache
     - $HOME/.npm
-    - $HOME/.nvm
 
 jobs:
   include:
@@ -25,6 +24,7 @@ before_install:
 
 install:
   - moodle-plugin-ci install -vvv
+  - npm install grunt --save-dev
 
 script:
   - moodle-plugin-ci phplint
